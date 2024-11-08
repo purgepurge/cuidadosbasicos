@@ -1,0 +1,44 @@
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script>
+        // Função para verificar a URL e mostrar um alerta
+        function checkSuccess() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success') === 'true') {
+                alert('Usuário criado com sucesso!');
+            }else {
+                alert('Erro ao criar Usuário')
+            }
+        }
+    </script>
+    <title>Crie seu cadastro</title>
+    
+</head>
+<body onload="checkSuccess()">
+    <nav class="navegacao">
+        <a href="home.html"><img src="Media/img/LOGO PRETO.png" width="240px" height="240px"/></a>
+    </nav>
+    <main>
+    <form action ="/PHP/cadastrar.php" method="POST">
+        <h1>Criar usuario</h1>
+        Nome:<input type="text" name="nome_Usuario"><br><br>
+        Email:<input type="text" name="email_Usuario"><br><br>
+        Senha:<input type="password"  name="senha_Usuario"><br><br>
+        Repita a senha:<input type="password" name="senha_Usuario"><br><br>
+        Sexo: <input type="radio" name="sexo_Usuario" value="M">Masculino
+        <input type="radio" name="sexo_Usuario" value="F">Feminino<br><br>
+        <input type="radio" name="sexo_Usuario" value="ND">Não Definido<br><br>
+        <input type="submit" value="Criar Usuario">
+        <input type="reset" value="limpar"><br><br>
+        <a href="login.html"> já tenho um cadastro</a><br><br>
+        <a href="home.html">Voltar a Página Inicial</a><br>
+    </form>
+    </main>
+</body>i
+</html>
